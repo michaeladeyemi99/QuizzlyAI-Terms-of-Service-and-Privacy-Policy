@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal – QuizzlyAI</title>
+  <meta name="description" content="QuizzlyAI Terms of Service and Privacy Policy" />
+  <style>
+    /* ── Reset & Base ────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:   #FEE6D4;
+      --secondary: #453D60;
+      --tertiary:  #1A1D3A;
+      --text:      #3a3754;
+      --muted:     #7b7a96;
+      --border:    rgba(69, 61, 96, 0.12);
+      --shadow:    0 4px 24px rgba(26, 29, 58, 0.08);
+      --shadow-sm: 0 2px 10px rgba(26, 29, 58, 0.06);
+      --radius:    14px;
+      --font:      'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font);
+      background: var(--primary);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ──────────────────────────────────────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(254, 230, 212, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--secondary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-icon svg { display: block; }
+
+    .logo-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--tertiary);
+      letter-spacing: -0.3px;
+    }
+
+    .header-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--secondary);
+      background: rgba(69, 61, 96, 0.1);
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* ── Hero / Page Title ───────────────────────────── */
+    .hero {
+      text-align: center;
+      padding: 56px 24px 40px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      background: rgba(69, 61, 96, 0.1);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 800;
+      color: var(--tertiary);
+      line-height: 1.2;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ── Tab Switcher ────────────────────────────────── */
+    .tab-bar-wrap {
+      display: flex;
+      justify-content: center;
+      padding: 0 24px 32px;
+    }
+
+    .tab-bar {
+      display: inline-flex;
+      background: rgba(69, 61, 96, 0.08);
+      border-radius: 50px;
+      padding: 4px;
+      gap: 2px;
+    }
+
+    .tab-btn {
+      padding: 9px 24px;
+      border-radius: 50px;
+      border: none;
+      background: transparent;
+      font-family: var(--font);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .tab-btn.active {
+      background: var(--secondary);
+      color: #fff;
+      box-shadow: 0 3px 12px rgba(69, 61, 96, 0.35);
+    }
+
+    .tab-btn:not(.active):hover {
+      color: var(--secondary);
+      background: rgba(69, 61, 96, 0.1);
+    }
+
+    /* ── Layout ──────────────────────────────────────── */
+    .layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* ── Sidebar / TOC ───────────────────────────────── */
+    .toc {
+      position: sticky;
+      top: 88px;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .toc-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .toc-list a {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 7px 10px;
+      border-radius: 8px;
+      transition: all 0.2s;
+      line-height: 1.4;
+    }
+
+    .toc-list a:hover,
+    .toc-list a.active {
+      background: rgba(69, 61, 96, 0.08);
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    /* ── Card / Content Area ─────────────────────────── */
+    .content-panel {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-header {
+      background: var(--tertiary);
+      padding: 28px 36px;
+    }
+
+    .panel-header h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .panel-header .updated {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .panel-body {
+      padding: 36px;
+    }
+
+    /* ── Sections ────────────────────────────────────── */
+    .doc-section {
+      padding-bottom: 36px;
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .doc-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .section-number {
+      width: 28px;
+      height: 28px;
+      background: var(--primary);
+      color: var(--secondary);
+      font-size: 0.72rem;
+      font-weight: 800;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .doc-section h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--tertiary);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .doc-section p {
+      font-size: 0.92rem;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .doc-section p:last-child { margin-bottom: 0; }
+
+    .doc-section ul, .doc-section ol {
+      margin: 10px 0 12px 18px;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .doc-section li { margin-bottom: 6px; line-height: 1.6; }
+
+    .doc-section strong { color: var(--tertiary); font-weight: 700; }
+
+    .doc-section a {
+      color: var(--secondary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── Highlight box ───────────────────────────────── */
+    .highlight-box {
+      background: rgba(69, 61, 96, 0.05);
+      border-left: 3px solid var(--secondary);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+
+    .highlight-box p { margin: 0; }
+
+    /* ── Info callout ────────────────────────────────── */
+    .callout {
+      background: rgba(254, 230, 212, 0.6);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.88rem;
+    }
+
+    .callout-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--secondary);
+      margin-bottom: 6px;
+    }
+
+    .callout p { margin: 0; }
+
+    /* ── Contact Card ────────────────────────────────── */
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--primary);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-top: 20px;
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--secondary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg { color: #fff; }
+
+    .contact-text { font-size: 0.88rem; }
+    .contact-text strong { display: block; color: var(--tertiary); margin-bottom: 2px; font-size: 0.92rem; }
+    .contact-text a { color: var(--secondary); text-decoration: none; }
+    .contact-text a:hover { text-decoration: underline; }
+
+    /* ── Panel visibility ────────────────────────────── */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── Footer ──────────────────────────────────────── */
+    footer {
+      background: var(--tertiary);
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.82rem;
+    }
+
+    footer a { color: rgba(255,255,255,0.85); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer strong { color: #fff; }
+
+    /* ── Back to top ─────────────────────────────────── */
+    #back-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      background: var(--secondary);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(69, 61, 96, 0.4);
+      opacity: 0;
+      transform: translateY(12px);
+      transition: all 0.3s ease;
+      z-index: 50;
+    }
+
+    #back-top.visible { opacity: 1; transform: translateY(0); }
+    #back-top:hover { background: var(--tertiary); }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 860px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+        display: none;
+      }
+
+      .panel-body { padding: 24px 20px; }
+      .panel-header { padding: 22px 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 36px 16px 28px; }
+      .tab-btn { padding: 8px 16px; font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="QuizzlyAI home">
+        <span class="logo-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="10" r="8" fill="none" stroke="#FEE6D4" stroke-width="1.8"/>
+            <path d="M7.5 8.5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5c0 1.2-.85 2.2-2 2.43V12" stroke="#FEE6D4" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="10" cy="14" r="0.9" fill="#FEE6D4"/>
+          </svg>
+        </span>
+        <span class="logo-name">QuizzlyAI</span>
+      </a>
+      <span class="header-badge">Legal Docs</span>
+    </div>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="hero-tag">Legal &amp; Privacy</div>
+    <h1>Terms of Service &amp;<br/>Privacy Policy</h1>
+    <p>Please read these documents carefully. They govern your use of QuizzlyAI and explain how we handle your data.</p>
+  </section>
+
+  <!-- ── Tabs ── -->
+  <div class="tab-bar-wrap">
+    <div class="tab-bar" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tos-panel" id="tos-tab" onclick="switchTab('tos')">
+        Terms of Service
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="privacy-panel" id="privacy-tab" onclick="switchTab('privacy')">
+        Privacy Policy
+      </button>
+    </div>
+  </div>
+
+  <!-- ── Layout ── -->
+  <div class="layout">
+
+    <!-- Sidebar TOC (hidden on mobile) -->
+    <nav class="toc" id="toc-nav" aria-label="Table of contents">
+      <p class="toc-title">On this page</p>
+      <ul class="toc-list" id="toc-list"></ul>
+    </nav>
+
+    <!-- Content -->
+    <main>
+
+      <!-- ── Terms of Service ── -->
+      <div class="tab-panel active" id="tos-panel" role="tabpanel" aria-labelledby="tos-tab">
+        <article class="content-panel">
+          <div class="panel-header">
+            <h2>Terms of Service</h2>
+            <p class="updated">Last updated: March 1, 2026</p>
+          </div>
+          <div class="panel-body">
+
+            <div class="doc-section" id="tos-1">
+              <span class="section-number">01</span>
+              <h3>Acceptance of Terms</h3>
+              <p>By accessing or using the QuizzlyAI platform, website, or any associated services (collectively, the "Service"), you confirm that you are at least 13 years old and agree to be bound by these Terms of Service ("Terms").</p>
+              <p>If you are accessing the Service on behalf of an organization, you represent that you have authority to bind that organization to these Terms.</p>
+              <div class="highlight-box">
+                <p><strong>Please read these Terms carefully.</strong> If you do not agree to all of these Terms, do not use the Service.</p>
+              </div>
+            </div>
+
+            <div class="doc-section" id="tos-2">
+              <span class="section-number">02</span>
+              <h3>Description of Service</h3>
+              <p>QuizzlyAI is an AI-powered quiz platform that enables users to:</p>
+              <ul>
+                <li>Create intelligent quizzes from text, PDFs, videos, audio, and images</li>
+                <li>Participate in adaptive, personalized quiz experiences</li>
+                <li>Access analytics and performance insights</li>
+                <li>Collaborate and share quiz content</li>
+                <li>Integrate quizzes into websites and learning management systems</li>
+              </ul>
+              <p>QuizzlyAI reserves the right to modify, suspend, or discontinue any aspect of the Service at any time with reasonable notice.</p>
+            </div>
+
+            <div class="doc-section" id="tos-3">
+              <span class="section-number">03</span>
+              <h3>User Accounts</h3>
+              <p>To access certain features, you must create an account. You agree to:</p>
+              <ul>
+                <li>Provide accurate, current, and complete information during registration</li>
+                <li>Maintain the security of your password and account credentials</li>
+                <li>Promptly notify us of any unauthorized use of your account</li>
+                <li>Accept responsibility for all activity that occurs under your account</li>
+              </ul>
+              <p>QuizzlyAI reserves the right to suspend or terminate accounts that violate these Terms, engage in fraudulent activity, or remain inactive for extended periods.</p>
+            </div>
+
+            <div class="doc-section" id="tos-4">
+              <span class="section-number">04</span>
+              <h3>User Content &amp; Conduct</h3>
+              <p>You retain ownership of content you submit to QuizzlyAI ("User Content"). By submitting User Content, you grant QuizzlyAI a worldwide, non-exclusive, royalty-free license to use, host, display, and distribute that content solely to provide and improve the Service.</p>
+              <p>You agree <strong>not</strong> to post, upload, or share content that:</p>
+              <ul>
+                <li>Is unlawful, defamatory, abusive, harassing, or fraudulent</li>
+                <li>Infringes any intellectual property, privacy, or proprietary rights</li>
+                <li>Contains malware, viruses, or disruptive code</li>
+                <li>Promotes discrimination, violence, or illegal activity</li>
+                <li>Violates any applicable local, national, or international law</li>
+              </ul>
+              <p>QuizzlyAI may remove any User Content that violates these guidelines without prior notice.</p>
+            </div>
+
+            <div class="doc-section" id="tos-5">
+              <span class="section-number">05</span>
+              <h3>Intellectual Property</h3>
+              <p>All content, software, designs, logos, and technology underlying the QuizzlyAI platform are the exclusive property of QuizzlyAI and its licensors, protected by copyright, trademark, and other intellectual property laws.</p>
+              <p>You may not copy, modify, distribute, sell, or create derivative works from any part of the Service without our prior written consent. QuizzlyAI's name and logo may not be used without express permission.</p>
+            </div>
+
+            <div class="doc-section" id="tos-6">
+              <span class="section-number">06</span>
+              <h3>AI-Generated Content</h3>
+              <p>QuizzlyAI uses artificial intelligence to generate quiz questions and feedback. You acknowledge that:</p>
+              <ul>
+                <li>AI-generated content may occasionally be inaccurate, incomplete, or inappropriate</li>
+                <li>You are responsible for reviewing AI-generated content before publishing or sharing it</li>
+                <li>QuizzlyAI does not warrant the accuracy or reliability of AI-generated output</li>
+                <li>You should not rely solely on AI-generated content for high-stakes assessments without human review</li>
+              </ul>
+            </div>
+
+            <div class="doc-section" id="tos-7">
+              <span class="section-number">07</span>
+              <h3>Subscription &amp; Payments</h3>
+              <p>QuizzlyAI offers both free and paid subscription tiers. For paid plans:</p>
+              <ul>
+                <li>Fees are billed in advance on a monthly or annual basis</li>
+                <li>All payments are non-refundable except where required by applicable law</li>
+                <li>Prices may change with 30 days' written notice</li>
+                <li>Failure to pay may result in service suspension or account termination</li>
+              </ul>
+              <p>You are responsible for all applicable taxes. QuizzlyAI uses reputable third-party payment processors; your payment information is not stored on our servers.</p>
+            </div>
+
+            <div class="doc-section" id="tos-8">
+              <span class="section-number">08</span>
+              <h3>Disclaimer of Warranties</h3>
+              <div class="callout">
+                <p class="callout-label">Important Notice</p>
+                <p>The Service is provided "as is" and "as available" without warranties of any kind, express or implied, including but not limited to merchantability, fitness for a particular purpose, or non-infringement. QuizzlyAI does not warrant that the Service will be uninterrupted, error-free, or completely secure.</p>
+              </div>
+            </div>
+
+            <div class="doc-section" id="tos-9">
+              <span class="section-number">09</span>
+              <h3>Limitation of Liability</h3>
+              <p>To the maximum extent permitted by law, QuizzlyAI and its affiliates, officers, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, goodwill, or other intangible losses, resulting from:</p>
+              <ul>
+                <li>Your use of or inability to use the Service</li>
+                <li>Unauthorized access to or alteration of your data</li>
+                <li>Any content obtained through the Service</li>
+                <li>Any other matter relating to the Service</li>
+              </ul>
+              <p>Our total liability to you shall not exceed the amount paid by you to QuizzlyAI in the 12 months prior to the claim.</p>
+            </div>
+
+            <div class="doc-section" id="tos-10">
+              <span class="section-number">10</span>
+              <h3>Governing Law &amp; Disputes</h3>
+              <p>These Terms are governed by and construed in accordance with applicable law. Any dispute arising from these Terms or your use of the Service shall be resolved through good-faith negotiation. If negotiation fails, disputes shall be settled by binding arbitration, except where prohibited by law.</p>
+              <p>You waive the right to participate in a class-action lawsuit or class-wide arbitration against QuizzlyAI.</p>
+            </div>
+
+            <div class="doc-section" id="tos-11">
+              <span class="section-number">11</span>
+              <h3>Changes to Terms</h3>
+              <p>We may revise these Terms from time to time. We will notify you of significant changes via email or a prominent notice on the platform. Your continued use of the Service after such notice constitutes acceptance of the updated Terms.</p>
+            </div>
+
+            <div class="doc-section" id="tos-12">
+              <span class="section-number">12</span>
+              <h3>Contact Us</h3>
+              <p>If you have questions about these Terms of Service, please reach out to our legal team:</p>
+              <div class="contact-card">
+                <span class="contact-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </span>
+                <div class="contact-text">
+                  <strong>QuizzlyAI Legal Team</strong>
+                  <a href="mailto:legal@quizzly.ai">legal@quizzly.ai</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+      </div>
+
+      <!-- ── Privacy Policy ── -->
+      <div class="tab-panel" id="privacy-panel" role="tabpanel" aria-labelledby="privacy-tab">
+        <article class="content-panel">
+          <div class="panel-header">
+            <h2>Privacy Policy</h2>
+            <p class="updated">Last updated: March 1, 2026</p>
+          </div>
+          <div class="panel-body">
+
+            <div class="doc-section" id="pp-1">
+              <span class="section-number">01</span>
+              <h3>Introduction</h3>
+              <p>QuizzlyAI ("we", "us", or "our") is committed to protecting your personal information. This Privacy Policy explains what data we collect, how we use it, and your rights regarding that data when you use our AI-powered quiz platform.</p>
+              <div class="highlight-box">
+                <p>We do not sell your personal data to third parties. Your privacy is fundamental to how we build and operate our platform.</p>
+              </div>
+            </div>
+
+            <div class="doc-section" id="pp-2">
+              <span class="section-number">02</span>
+              <h3>Information We Collect</h3>
+              <p><strong>Account &amp; Profile Information</strong></p>
+              <ul>
+                <li>Name, email address, and password when you register</li>
+                <li>Profile photo and biography (optional)</li>
+                <li>Organization or institution name (for educator/business accounts)</li>
+              </ul>
+              <p><strong>Usage &amp; Activity Data</strong></p>
+              <ul>
+                <li>Quizzes created, taken, and scores achieved</li>
+                <li>Feature interactions and time spent in the platform</li>
+                <li>Device type, browser, operating system, and IP address</li>
+                <li>Referring URLs and navigation paths</li>
+              </ul>
+              <p><strong>Content You Provide</strong></p>
+              <ul>
+                <li>Text, documents, images, audio, or video uploaded to generate quizzes</li>
+                <li>Quiz questions, answers, and explanations you create</li>
+                <li>Comments, feedback, and support messages</li>
+              </ul>
+              <p><strong>Payment Information</strong></p>
+              <ul>
+                <li>Billing address and payment method details (processed securely by our payment provider; not stored by QuizzlyAI)</li>
+              </ul>
+            </div>
+
+            <div class="doc-section" id="pp-3">
+              <span class="section-number">03</span>
+              <h3>How We Use Your Information</h3>
+              <p>We use your information to:</p>
+              <ul>
+                <li><strong>Provide the Service</strong> — create and manage your account, process quiz interactions, and deliver personalized learning experiences</li>
+                <li><strong>Improve &amp; develop features</strong> — analyze usage patterns to enhance AI accuracy, platform performance, and user experience</li>
+                <li><strong>Communicate with you</strong> — send transactional emails, product updates, and support responses</li>
+                <li><strong>Ensure security</strong> — detect and prevent fraud, abuse, and unauthorized access</li>
+                <li><strong>Legal compliance</strong> — fulfill legal obligations and enforce our Terms of Service</li>
+                <li><strong>Analytics</strong> — generate aggregated, de-identified insights about platform usage</li>
+              </ul>
+              <p>We will not use your data for purposes materially different from those described without updating this Policy and, where required, obtaining your consent.</p>
+            </div>
+
+            <div class="doc-section" id="pp-4">
+              <span class="section-number">04</span>
+              <h3>Cookies &amp; Tracking Technologies</h3>
+              <p>QuizzlyAI uses cookies and similar technologies to:</p>
+              <ul>
+                <li>Keep you signed in across sessions</li>
+                <li>Remember your preferences and settings</li>
+                <li>Analyze aggregate usage and traffic patterns</li>
+                <li>Deliver relevant features and functionality</li>
+              </ul>
+              <p>You can control cookies through your browser settings. Disabling certain cookies may affect Service functionality. We do not respond to "Do Not Track" signals at this time, but we honor opt-outs for non-essential analytics.</p>
+            </div>
+
+            <div class="doc-section" id="pp-5">
+              <span class="section-number">05</span>
+              <h3>Data Sharing &amp; Third Parties</h3>
+              <p>We may share your information with:</p>
+              <ul>
+                <li><strong>Service providers</strong> — cloud hosting, payment processing, email delivery, analytics, and customer support tools, under strict data processing agreements</li>
+                <li><strong>AI model providers</strong> — anonymized or de-identified content may be processed by third-party AI APIs to power quiz generation features</li>
+                <li><strong>Business transfers</strong> — in the event of a merger, acquisition, or sale, your data may be transferred with prior notice</li>
+                <li><strong>Law enforcement</strong> — when required by law, court order, or to protect the safety of our users or the public</li>
+              </ul>
+              <p>We do not share personally identifiable information with advertisers or data brokers.</p>
+            </div>
+
+            <div class="doc-section" id="pp-6">
+              <span class="section-number">06</span>
+              <h3>Data Retention</h3>
+              <p>We retain your personal data for as long as your account is active or as needed to provide the Service. Specifically:</p>
+              <ul>
+                <li>Account data is kept until you delete your account</li>
+                <li>Quiz content and results are retained for the duration of your account</li>
+                <li>Anonymized analytics data may be retained indefinitely</li>
+                <li>Legal records may be kept longer as required by applicable law</li>
+              </ul>
+              <p>After account deletion, we purge personal data within 30 days, except where retention is required by law.</p>
+            </div>
+
+            <div class="doc-section" id="pp-7">
+              <span class="section-number">07</span>
+              <h3>Your Privacy Rights</h3>
+              <p>Depending on your location, you may have the following rights:</p>
+              <ul>
+                <li><strong>Access</strong> — request a copy of the personal data we hold about you</li>
+                <li><strong>Correction</strong> — update inaccurate or incomplete data</li>
+                <li><strong>Deletion</strong> — request erasure of your personal data ("right to be forgotten")</li>
+                <li><strong>Portability</strong> — receive your data in a structured, machine-readable format</li>
+                <li><strong>Objection</strong> — object to processing based on legitimate interests</li>
+                <li><strong>Restriction</strong> — request that we limit how we use your data</li>
+                <li><strong>Withdraw consent</strong> — where processing is based on consent, withdraw it at any time</li>
+              </ul>
+              <p>To exercise any of these rights, contact us at <a href="mailto:privacy@quizzly.ai">privacy@quizzly.ai</a>. We will respond within 30 days.</p>
+            </div>
+
+            <div class="doc-section" id="pp-8">
+              <span class="section-number">08</span>
+              <h3>Children's Privacy</h3>
+              <p>QuizzlyAI does not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal data, please contact us immediately at <a href="mailto:privacy@quizzly.ai">privacy@quizzly.ai</a> and we will delete that information promptly.</p>
+              <p>Educational institutions using QuizzlyAI with students under 13 must comply with COPPA and other applicable child privacy laws, and are responsible for obtaining verifiable parental consent.</p>
+            </div>
+
+            <div class="doc-section" id="pp-9">
+              <span class="section-number">09</span>
+              <h3>Data Security</h3>
+              <p>We implement industry-standard technical and organizational measures to protect your data, including:</p>
+              <ul>
+                <li>TLS/HTTPS encryption for all data in transit</li>
+                <li>AES-256 encryption for sensitive data at rest</li>
+                <li>Access controls and role-based permissions</li>
+                <li>Regular security audits and vulnerability assessments</li>
+                <li>Incident response procedures for potential data breaches</li>
+              </ul>
+              <div class="callout">
+                <p class="callout-label">Security Notice</p>
+                <p>While we strive to protect your data, no transmission or storage system is 100% secure. If you suspect unauthorized access to your account, contact us immediately.</p>
+              </div>
+            </div>
+
+            <div class="doc-section" id="pp-10">
+              <span class="section-number">10</span>
+              <h3>International Data Transfers</h3>
+              <p>QuizzlyAI operates globally. Your data may be transferred to and processed in countries other than your own. Where we transfer data outside the European Economic Area, we use appropriate safeguards including Standard Contractual Clauses approved by the European Commission.</p>
+            </div>
+
+            <div class="doc-section" id="pp-11">
+              <span class="section-number">11</span>
+              <h3>Changes to This Policy</h3>
+              <p>We may update this Privacy Policy periodically. We will notify you of material changes by email or via a notice on the platform. Your continued use of the Service after the effective date constitutes acceptance of the updated Policy.</p>
+            </div>
+
+            <div class="doc-section" id="pp-12">
+              <span class="section-number">12</span>
+              <h3>Contact &amp; Data Controller</h3>
+              <p>QuizzlyAI is the data controller for information processed under this Policy. For privacy inquiries, data subject requests, or to reach our Data Protection Officer:</p>
+              <div class="contact-card">
+                <span class="contact-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </span>
+                <div class="contact-text">
+                  <strong>Privacy &amp; Data Protection</strong>
+                  <a href="mailto:privacy@quizzly.ai">privacy@quizzly.ai</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <p>&copy; 2026 <strong>QuizzlyAI</strong>. All rights reserved. &nbsp;·&nbsp;
+      <a href="mailto:legal@quizzly.ai">legal@quizzly.ai</a>
+    </p>
+  </footer>
+
+  <!-- ── Back to Top ── -->
+  <button id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script>
+    /* ── Tab switching ──────────────────────────────── */
+    function switchTab(tab) {
+      const panels = document.querySelectorAll('.tab-panel');
+      const buttons = document.querySelectorAll('.tab-btn');
+
+      panels.forEach(p => p.classList.remove('active'));
+      buttons.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+
+      document.getElementById(tab + '-panel').classList.add('active');
+      document.getElementById(tab + '-tab').classList.add('active');
+      document.getElementById(tab + '-tab').setAttribute('aria-selected', 'true');
+
+      buildToc(tab);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ── Build Table of Contents ────────────────────── */
+    function buildToc(tab) {
+      const panel = document.getElementById(tab + '-panel');
+      const sections = panel.querySelectorAll('.doc-section[id]');
+      const list = document.getElementById('toc-list');
+
+      list.innerHTML = '';
+      sections.forEach(sec => {
+        const heading = sec.querySelector('h3');
+        if (!heading) return;
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + sec.id;
+        a.textContent = heading.textContent;
+        a.addEventListener('click', () => {
+          setTimeout(() => setActiveLink(a), 100);
+        });
+        li.appendChild(a);
+        list.appendChild(li);
+      });
+    }
+
+    function setActiveLink(el) {
+      document.querySelectorAll('.toc-list a').forEach(a => a.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    /* ── Scroll spy for TOC ─────────────────────────── */
+    function scrollSpy() {
+      const links = document.querySelectorAll('.toc-list a');
+      if (!links.length) return;
+
+      let current = null;
+      links.forEach(a => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          const rect = target.getBoundingClientRect();
+          if (rect.top <= 120) current = a;
+        }
+      });
+
+      if (current) {
+        links.forEach(a => a.classList.remove('active'));
+        current.classList.add('active');
+      }
+    }
+
+    /* ── Back-to-top visibility ─────────────────────── */
+    const backTop = document.getElementById('back-top');
+    window.addEventListener('scroll', () => {
+      backTop.classList.toggle('visible', window.scrollY > 320);
+      scrollSpy();
+    }, { passive: true });
+
+    /* ── Init ───────────────────────────────────────── */
+    buildToc('tos');
+  </script>
+</body>
+</html>
