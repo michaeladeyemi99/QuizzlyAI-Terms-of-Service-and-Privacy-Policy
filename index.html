@@ -830,6 +830,8 @@
   <!-- ── Footer ── -->
   <footer>
     <p>&copy; 2026 <strong>QuizzlyAI</strong>. All rights reserved. &nbsp;·&nbsp;
+      <a href="#tos">Terms of Service</a> &nbsp;·&nbsp;
+      <a href="#privacy">Privacy Policy</a> &nbsp;·&nbsp;
       <a href="mailto:quizzlyai.app@gmail.com">quizzlyai.app@gmail.com</a>
     </p>
   </footer>
@@ -857,6 +859,7 @@
       document.getElementById(tab + '-tab').classList.add('active');
       document.getElementById(tab + '-tab').setAttribute('aria-selected', 'true');
 
+      history.replaceState(null, '', '#' + tab);
       buildToc(tab);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -915,8 +918,15 @@
       scrollSpy();
     }, { passive: true });
 
+    /* ── Hash-based navigation ──────────────────────── */
+    function getTabFromHash() {
+      return (window.location.hash === '#privacy') ? 'privacy' : 'tos';
+    }
+
+    window.addEventListener('hashchange', () => switchTab(getTabFromHash()));
+
     /* ── Init ───────────────────────────────────────── */
-    buildToc('tos');
+    switchTab(getTabFromHash());
   </script>
 </body>
 </html>
